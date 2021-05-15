@@ -1,0 +1,9 @@
+<!-- Loop over each post object -->
+{{#each posts as |post| }}
+<div class="row align-center mb-5">
+  <div class="col">
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+  </div>
+</div>
+{{/each}}

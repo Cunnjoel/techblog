@@ -18,9 +18,9 @@
   </header>
     <nav>
     <a href="/">Home</a>
-    <a href="/post">Dashboard</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a href="/post">Dashboard</a>
+    <a id="logout" class="btn-no-style">Logout</a>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}

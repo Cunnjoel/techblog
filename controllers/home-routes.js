@@ -10,12 +10,12 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const users = postData.map((user) =>
+    const posts = postData.map((user) =>
       user.get({ plain: true })
     );
     res.render('homepage', {
-      users,
-      loggedIn: req.session.loggedIn,
+      posts,
+      loggedIn:req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -30,6 +30,14 @@ router.get('/login', (req, res) => {
     return;
   }
   res.render('login');
+});
+
+router.get('/post', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('post');
 });
 
 module.exports = router;
